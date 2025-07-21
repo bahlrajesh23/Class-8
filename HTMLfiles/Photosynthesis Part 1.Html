@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photosynthesis and Experiments Quiz</title>
+  <!-- You can link to a shared CSS file if preferred -->
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  <style>
+    /* General body styling */
+    body {
+      font-family: Arial, sans-serif; /* Standard font */
+      max-width: 800px; /* Limit content width for readability */
+      margin: 20px auto; /* Center the content with margin */
+      padding: 20px; /* Padding around the content */
+      background-color: #f0f4f8; /* Light background for the page */
+    }
+    /* Container for the quiz elements */
+    .quiz-container {
+      background: #ffffff; /* White background for the quiz area */
+      padding: 25px; /* Padding inside the container */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+    }
+     /* Link back style */
+    .navigation-link {
+        display: block;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #1a73e8;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .navigation-link:hover {
+        text-decoration: underline;
+    }
+    /* Styling for each question block */
+    .question {
+      margin-bottom: 25px; /* Space below each question */
+      padding: 20px; /* Padding inside question block */
+      background: #f9f9f9; /* Slightly off-white background for questions */
+      border-radius: 5px; /* Rounded corners */
+      border-left: 5px solid #1e88e5; /* Accent border on the left */
+    }
+    /* Question text styling */
+    .question p {
+        font-weight: bold; /* Make question text bold */
+        margin-bottom: 10px; /* Space below question text */
+        color: #333; /* Darker text color */
+    }
+    /* Styling for radio button options */
+    .options label {
+      display: block; /* Each option on a new line */
+      margin: 10px 0 10px 5px; /* Spacing around options */
+      padding: 8px; /* Padding inside label */
+      border-radius: 4px; /* Rounded corners for label */
+      cursor: pointer; /* Indicate it's clickable */
+      transition: background-color 0.2s ease-in-out; /* Smooth background transition on hover */
+    }
+    .options label:hover {
+        background-color: #e3f2fd; /* Light blue background on hover */
+    }
+    /* Spacing for radio button itself */
+    .options input[type="radio"] {
+        margin-right: 8px; /* Space between radio button and text */
+    }
+    /* Submit button styling */
+    button {
+      background: #4CAF50; /* Green background */
+      color: white; /* White text */
+      border: none; /* No border */
+      padding: 12px 25px; /* Padding inside button */
+      border-radius: 4px; /* Rounded corners */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-size: 16px; /* Font size */
+      margin-top: 20px; /* Space above the button */
+      display: block; /* Make it a block element */
+      margin-left: auto; /* Center button (along with margin-right: auto) */
+      margin-right: auto;
+      transition: background-color 0.3s ease; /* Smooth transition */
+    }
+    button:hover {
+      background: #45a049; /* Darker green on hover */
+    }
+    /* Error message styling */
+    #error {
+      color: #d32f2f; /* Red text color */
+      padding: 12px; /* Padding */
+      background: #ffebee; /* Light red background */
+      border-left: 4px solid #d32f2f; /* Red accent border */
+      margin: 15px 0; /* Margin top and bottom */
+      border-radius: 4px; /* Rounded corners */
+      display: none; /* Hidden by default */
+    }
+    /* Result display styling */
+    #result {
+      font-weight: bold; /* Bold text */
+      font-size: 1.2em; /* Larger font size */
+      margin: 20px 0; /* Margin top and bottom */
+      padding: 15px; /* Padding */
+      background: #e8f5e9; /* Light green background */
+      border-left: 4px solid #2e7d32; /* Green accent border */
+      border-radius: 4px; /* Rounded corners */
+      text-align: center; /* Center the text */
+    }
+    /* Container for all feedback items */
+     #feedback {
+        margin-top: 20px; /* Add space above the feedback section */
+     }
+    #feedback h3 {
+        margin-bottom: 15px; /* Space below the feedback heading */
+        color: #c62828; /* Reddish color for the heading */
+    }
+    /* Styling for individual feedback items (wrong answers) */
+    .feedback-item {
+      margin: 15px 0; /* Margin top and bottom */
+      padding: 15px; /* Padding */
+      background: #fff3e0; /* Light orange background */
+      border-left: 4px solid #ef6c00; /* Orange accent border */
+      border-radius: 4px; /* Rounded corners */
+    }
+    /* Styling for the correct answer text within feedback */
+    .correct-answer {
+      color: #2e7d32; /* Green text color for correct answer */
+      font-weight: bold; /* Bold text */
+      margin-top: 8px; /* Space above the correct answer text */
+    }
+  </style>
+</head>
+<body>
+  <!-- Link back to the main index page -->
+  <a href="../index.html" class="navigation-link">⬅️ Back to Quiz List</a>
+
+  <div class="quiz-container">
+    <h1>🧪 Photosynthesis and Experiments Quiz</h1>
+    <form id="quizForm">
+      <!-- Divs for error, result, and feedback messages -->
+      <div id="error"></div>
+      <div id="result"></div>
+      <div id="feedback"></div> <!-- Added feedback div -->
+
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. What does the word 'photosynthesis' mean?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="0"> Breaking down light</label>
+          <label><input type="radio" name="q1" value="1"> Making with light</label> <!-- Correct -->
+          <label><input type="radio" name="q1" value="0"> Light from the sun</label>
+          <label><input type="radio" name="q1" value="0"> Creating water</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. What are the reactants in photosynthesis (the things a plant uses)?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="0"> Oxygen, glucose, and water</label>
+          <label><input type="radio" name="q2" value="0"> Sunlight, oxygen, and soil</label>
+          <label><input type="radio" name="q2" value="1"> Water, carbon dioxide, and energy from sunlight</label> <!-- Correct -->
+          <label><input type="radio" name="q2" value="0"> Carbon dioxide, glucose, and oxygen</label>
+        </div>
+      </div>
+      
+      <!-- Question 3 -->
+      <div class="question">
+        <p>3. What are the products of photosynthesis (the new substances made)?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="0"> Water and carbon dioxide</label>
+          <label><input type="radio" name="q3" value="1"> Glucose and oxygen</label> <!-- Correct -->
+          <label><input type="radio" name="q3" value="0"> Chlorophyll and sunlight</label>
+          <label><input type="radio" name="q3" value="0"> Soil and minerals</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <p>4. What is the name of the green pigment that captures energy from sunlight?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="0"> Cytoplasm</label>
+          <label><input type="radio" name="q4" value="0"> Stomata</label>
+          <label><input type="radio" name="q4" value="1"> Chlorophyll</label> <!-- Correct -->
+          <label><input type="radio" name="q4" value="0"> Glucose</label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <p>5. In which part of the plant does most photosynthesis happen?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="0"> Roots</label>
+          <label><input type="radio" name="q5" value="1"> Leaves</label> <!-- Correct -->
+          <label><input type="radio" name="q5" value="0"> Stem</label>
+          <label><input type="radio" name="q5" value="0"> Flower</label>
+        </div>
+      </div>
+
+       <!-- Question 6 -->
+      <div class="question">
+        <p>6. What is the correct word equation for photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="0"> Glucose + Oxygen → Water + Carbon Dioxide</label>
+          <label><input type="radio" name="q6" value="0"> Water + Oxygen → Glucose + Carbon Dioxide</label>
+          <label><input type="radio" name="q6" value="1"> Water + Carbon Dioxide → Glucose + Oxygen</label> <!-- Correct -->
+          <label><input type="radio" name="q6" value="0"> Sunlight + Water → Oxygen + Glucose</label>
+        </div>
+      </div>
+
+       <!-- Question 7 -->
+      <div class="question">
+        <p>7. In the experiment to collect gas from a plant, why is a water plant used?</p>
+        <div class="options">
+          <label><input type="radio" name="q7" value="0"> Because water plants produce more gas.</label>
+          <label><input type="radio" name="q7" value="0"> Because land plants do not produce gas.</label>
+          <label><input type="radio" name="q7" value="1"> Because it makes it easy to collect the gas bubbles.</label> <!-- Correct -->
+          <label><input type="radio" name="q7" value="0"> Because water plants do not need soil.</label>
+        </div>
+      </div>
+
+       <!-- Question 8 -->
+      <div class="question">
+        <p>8. What gas is produced by the plant during photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q8" value="0"> Carbon Dioxide</label>
+          <label><input type="radio" name="q8" value="1"> Oxygen</label> <!-- Correct -->
+          <label><input type="radio" name="q8" value="0"> Nitrogen</label>
+          <label><input type="radio" name="q8" value="0"> Hydrogen</label>
+        </div>
+      </div>
+
+       <!-- Question 9 -->
+      <div class="question">
+        <p>9. How do you test for the gas produced during photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q9" value="0"> With a lit splint, which will pop.</label>
+          <label><input type="radio" name="q9" value="0"> With limewater, which will turn cloudy.</label>
+          <label><input type="radio" name="q9" value="1"> With a glowing splint, which will relight.</label> <!-- Correct -->
+          <label><input type="radio" name="q9" value="0"> With a lit splint, which will be extinguished.</label>
+        </div>
+      </div>
+
+       <!-- Question 10 -->
+      <div class="question">
+        <p>10. Where does a plant get water for photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q10" value="0"> From the air through its leaves</label>
+          <label><input type="radio" name="q10" value="1"> From the soil through its roots</label> <!-- Correct -->
+          <label><input type="radio" name="q10" value="0"> It creates water during the process</label>
+          <label><input type="radio" name="q10" value="0"> From the rain on its stem</label>
+        </div>
+      </div>
+
+       <!-- Question 11 -->
+      <div class="question">
+        <p>11. Where does a plant get carbon dioxide for photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q11" value="0"> From the soil through its roots</label>
+          <label><input type="radio" name="q11" value="0"> It is produced by the chlorophyll</label>
+          <label><input type="radio" name="q11" value="1"> From the air through its leaves</label> <!-- Correct -->
+          <label><input type="radio" name="q11" value="0"> From the water it absorbs</label>
+        </div>
+      </div>
+
+       <!-- Question 12 -->
+      <div class="question">
+        <p>12. In the experiment investigating light intensity, what is measured to find the rate of photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q12" value="0"> The change in water temperature.</label>
+          <label><input type="radio" name="q12" value="1"> The number of bubbles produced in one minute.</label> <!-- Correct -->
+          <label><input type="radio" name="q12" value="0"> The growth of the plant's leaves.</label>
+          <label><input type="radio" name="q12" value="0"> The amount of water absorbed.</label>
+        </div>
+      </div>
+
+       <!-- Question 13 -->
+      <div class="question">
+        <p>13. How would you increase the light intensity in the experiment?</p>
+        <div class="options">
+          <label><input type="radio" name="q13" value="0"> Use a dimmer lamp.</label>
+          <label><input type="radio" name="q13" value="0"> Add more water to the test tube.</label>
+          <label><input type="radio" name="q13" value="1"> Move the lamp closer to the test tube.</label> <!-- Correct -->
+          <label><input type="radio" name="q13" value="0"> Use a larger piece of water plant.</label>
+        </div>
+      </div>
+
+       <!-- Question 14 -->
+      <div class="question">
+        <p>14. What is the expected result if you move the lamp further away from the water plant?</p>
+        <div class="options">
+          <label><input type="radio" name="q14" value="0"> The number of bubbles will increase.</label>
+          <label><input type="radio" name="q14" value="1"> The number of bubbles will decrease.</label> <!-- Correct -->
+          <label><input type="radio" name="q14" value="0"> The number of bubbles will stay the same.</label>
+          <label><input type="radio" name="q14" value="0"> The plant will stop producing bubbles immediately.</label>
+        </div>
+      </div>
+
+       <!-- Question 15 -->
+      <div class="question">
+        <p>15. What is the purpose of the chemical reaction in photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q15" value="0"> To release energy for the plant to use immediately.</label>
+          <label><input type="radio" name="q15" value="1"> To combine water and carbon dioxide to make food (glucose).</label> <!-- Correct -->
+          <label><input type="radio" name="q15" value="0"> To break down glucose into smaller parts.</label>
+          <label><input type="radio" name="q15" value="0"> To absorb minerals from the soil.</label>
+        </div>
+      </div>
+
+       <!-- Question 16 -->
+      <div class="question">
+        <p>16. What safety precaution is mentioned for the light intensity experiment?</p>
+        <div class="options">
+          <label><input type="radio" name="q16" value="0"> Wear safety goggles.</label>
+          <label><input type="radio" name="q16" value="0"> Do not touch the water plant.</label>
+          <label><input type="radio" name="q16" value="1"> Keep electrical wires and plugs away from water.</label> <!-- Correct -->
+          <label><input type="radio" name="q16" value="0"> Use only cold water.</label>
+        </div>
+      </div>
+
+       <!-- Question 17 -->
+      <div class="question">
+        <p>17. In the gas collection experiment, why must you keep your thumb over the end of the test tube when you take it out of the water?</p>
+        <div class="options">
+          <label><input type="radio" name="q17" value="0"> To keep the water from spilling.</label>
+          <label><input type="radio" name="q17" value="1"> To keep the water and the collected gas inside.</label> <!-- Correct -->
+          <label><input type="radio" name="q17" value="0"> To warm up the gas inside.</label>
+          <label><input type="radio" name="q17" value="0"> To prevent light from getting in.</label>
+        </div>
+      </div>
+
+       <!-- Question 18 -->
+      <div class="question">
+        <p>18. What is the role of the energy from sunlight in photosynthesis?</p>
+        <div class="options">
+          <label><input type="radio" name="q18" value="0"> It cools down the plant's leaves.</label>
+          <label><input type="radio" name="q18" value="0"> It is converted directly into oxygen.</label>
+          <label><input type="radio" name="q18" value="1"> It powers the chemical reaction between water and carbon dioxide.</label> <!-- Correct -->
+          <label><input type="radio" name="q18" value="0"> It helps the roots absorb water.</label>
+        </div>
+      </div>
+
+
+      <!-- Submit Button -->
+      <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+  </div>
+
+  <script>
+    // Object storing the correct answer TEXT for each question.
+    const correctAnswers = {
+      q1: "Making with light",
+      q2: "Water, carbon dioxide, and energy from sunlight",
+      q3: "Glucose and oxygen",
+      q4: "Chlorophyll",
+      q5: "Leaves",
+      q6: "Water + Carbon Dioxide → Glucose + Oxygen",
+      q7: "Because it makes it easy to collect the gas bubbles.",
+      q8: "Oxygen",
+      q9: "With a glowing splint, which will relight.",
+      q10: "From the soil through its roots",
+      q11: "From the air through its leaves",
+      q12: "The number of bubbles produced in one minute.",
+      q13: "Move the lamp closer to the test tube.",
+      q14: "The number of bubbles will decrease.",
+      q15: "To combine water and carbon dioxide to make food (glucose).",
+      q16: "Keep electrical wires and plugs away from water.",
+      q17: "To keep the water and the collected gas inside.",
+      q18: "It powers the chemical reaction between water and carbon dioxide."
+    };
+
+    // Total number of questions in the quiz
+    const totalQuestions = 18;
+
+    // Function executed when the "Submit Quiz" button is clicked
+    function submitQuiz() {
+      const form = document.getElementById('quizForm'); // Get form element
+      const errorDiv = document.getElementById('error');
+      const resultDiv = document.getElementById('result');
+      const feedbackDiv = document.getElementById('feedback');
+
+      // --- Reset displays on each submission ---
+      errorDiv.style.display = 'none'; // Hide error message
+      errorDiv.innerHTML = ''; // Clear previous error text
+      resultDiv.innerHTML = ''; // Clear previous result text
+      feedbackDiv.innerHTML = ''; // Clear previous feedback text
+
+      // --- Check if all questions are answered ---
+      let unanswered = []; // Array to store the numbers of unanswered questions
+      // Loop from 1 to totalQuestions
+      for (let i = 1; i <= totalQuestions; i++) {
+        // Check if there is NO checked radio button for the question name q{i}
+        if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+          unanswered.push(i); // Add the question number to the unanswered list
+        }
+      }
+
+      // If there are any unanswered questions
+      if (unanswered.length > 0) {
+        // Construct and display the error message
+        errorDiv.innerHTML = `⚠️ Please answer all ${totalQuestions} questions. Missing answers for questions: ${unanswered.join(', ')}`;
+        errorDiv.style.display = 'block'; // Make the error message visible
+        errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the error message
+        return; // Stop the function execution
+      }
+
+      // --- Calculate score and collect feedback ---
+      let score = 0; // Initialize score
+      let wrongAnswersFeedback = []; // Array to store info about incorrect answers
+
+      // Loop through each question again
+      for (let i = 1; i <= totalQuestions; i++) {
+        const questionName = `q${i}`; // e.g., "q1", "q2"
+        // Find the radio button that is checked for this question
+        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+
+        // Check if the selected option's value is "1" (indicating correct)
+        if (selectedOption && selectedOption.value === "1") {
+          score++; // Increment score if correct
+        } else if (selectedOption) { // If an option was selected but it was wrong (value != "1")
+          // Find the parent '.question' div for the current radio button
+          const questionDiv = selectedOption.closest('.question');
+          // Find the question text (<p> tag) within that div
+          const questionTextElement = questionDiv ? questionDiv.querySelector('p') : null;
+          const questionText = questionTextElement ? questionTextElement.textContent : `Question ${i} text not found`; // Fallback text
+
+          // Add details about the incorrect answer to the feedback array
+          wrongAnswersFeedback.push({
+            number: i, // Question number
+            text: questionText.trim(), // The text of the question
+            correct: correctAnswers[questionName] || "Correct answer not defined" // The correct answer text from the object
+          });
+        }
+      }
+
+      // --- Display results ---
+      // Show the final score. Color the score green if >= 13 (approx 70%), red otherwise.
+      // Adjust the threshold (13) as needed.
+      resultDiv.innerHTML = `Your Score: <span style="color:${score >= 13 ? '#2e7d32' : '#d32f2f'}">${score} / ${totalQuestions}</span>`;
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the results
+
+      // --- Display feedback for wrong answers ---
+      // Check if there were any incorrect answers
+      if (wrongAnswersFeedback.length > 0) {
+        // Start the feedback section with a heading
+        feedbackDiv.innerHTML = '<h3>Review Incorrect Answers:</h3>';
+        // Loop through each item in the wrongAnswersFeedback array
+        wrongAnswersFeedback.forEach(item => {
+          // Append the HTML for each feedback item
+          feedbackDiv.innerHTML += `
+            <div class="feedback-item">
+              <p><strong>Question ${item.number}:</strong> ${item.text}</p>
+              <p class="correct-answer">Correct answer: ${item.correct}</p>
+            </div>
+          `;
+        });
+      } else {
+        // If all answers were correct, display a success message
+        feedbackDiv.innerHTML = '<div style="color:green; font-weight:bold; text-align:center; padding: 15px; background: #e8f5e9; border-left: 4px solid #2e7d32; border-radius: 4px;">🎉 Perfect! All answers correct! 🎉</div>';
+      }
+    }
+  </script>
+</body>
+</html>
